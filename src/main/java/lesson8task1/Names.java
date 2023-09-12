@@ -1,4 +1,4 @@
-package L8task1;
+package lesson8task1;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
