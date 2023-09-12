@@ -1,7 +1,4 @@
-package L8task2;
-
-import java.util.ArrayList;
-import java.util.List;
+package lesson8task2;
 
 public interface OwnList {
 
