@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class ArrayList implements OwnList {
+public class MyArrayList implements OwnList {
     static final int default_capacity = 10;
     Integer[] elements;
     int size;
 
     public static void main(String[] args) {
-        OwnList arrayList = new ArrayList();
+        OwnList arrayList = new MyArrayList();
         List<Integer> numbers = List.of(3, -100, 6, 8, 128, 210);
 
         for (Integer number : numbers) {
             arrayList.add(number);
         }
-        System.out.println("size of the ArrayList: " + arrayList.size());
+        System.out.println("size of the MyArrayList: " + arrayList.size());
         System.out.println("the list is empty: " + arrayList.isEmpty());
 
-        System.out.println("elements of the ArrayList: ");
+        System.out.println("elements of the MyArrayList: ");
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(arrayList.get(i) + "");
         }
@@ -33,7 +33,7 @@ public class ArrayList implements OwnList {
         System.out.println("___________________________");
 
         arrayList.add(2, 27);
-        System.out.println("element of the ArrayList after adding: ");
+        System.out.println("element of the MyArrayList after adding: ");
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(arrayList.get(i) + "");
         }
@@ -41,14 +41,14 @@ public class ArrayList implements OwnList {
 
         System.out.println("an item of the specified index 4: "+ arrayList.get(4));
         arrayList.remove(4);
-        System.out.println("element of the ArrayList after removing: ");
+        System.out.println("element of the MyArrayList after removing: ");
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(arrayList.get(i) + "");
         }
         System.out.println("___________________________");
     }
 
-    public ArrayList() {
+    public MyArrayList() {
         this.elements = new Integer[default_capacity];
         this.size = 0;
     }
