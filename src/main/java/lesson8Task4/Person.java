@@ -2,7 +2,7 @@ package lesson8Task4;
 
 import java.util.List;
 
-public class Person {
+public class Person implements Comparable<Person>{
     String name;
     String lastName;
     int yearOfBirth;
@@ -48,5 +48,8 @@ public class Person {
                 '}';
     }
 
-
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(o.yearOfBirth, this.yearOfBirth);
+    }
 }
