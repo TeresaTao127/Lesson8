@@ -6,44 +6,46 @@ import java.util.List;
 
 public class MyArrayList implements OwnList {
     static final int default_capacity = 10;
+    public static boolean isEmpty;
+
     Integer[] elements;
-    int size;
+    static int size;
 
     public static void main(String[] args) {
-        OwnList arrayList = new MyArrayList();
+        OwnList myArrayList = new MyArrayList();
         List<Integer> numbers = List.of(3, -100, 6, 8, 128, 210);
 
         for (Integer number : numbers) {
-            arrayList.add(number);
+            myArrayList.add(number);
         }
-        System.out.println("size of the MyArrayList: " + arrayList.size());
-        System.out.println("the list is empty: " + arrayList.isEmpty());
+        System.out.println("size of the MyArrayList: " + myArrayList.size());
+        System.out.println("the list is empty: " + myArrayList.isEmpty());
 
         System.out.println("elements of the MyArrayList: ");
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println(arrayList.get(i) + "");
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println(myArrayList.get(i) + "");
         }
         System.out.println("___________________________");
 
-        arrayList.add(99);
+        myArrayList.add(99);
         System.out.println("add an item 99 to the end of the list: ");
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println(arrayList.get(i) + "");
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println(myArrayList.get(i) + "");
         }
         System.out.println("___________________________");
 
-        arrayList.add(2, 27);
+        myArrayList.add(2, 27);
         System.out.println("element of the MyArrayList after adding: ");
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println(arrayList.get(i) + "");
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println(myArrayList.get(i) + "");
         }
         System.out.println("___________________________");
 
-        System.out.println("an item of the specified index 4: "+ arrayList.get(4));
-        arrayList.remove(4);
+        System.out.println("an item of the specified index 4: "+ myArrayList.get(4));
+        myArrayList.remove(4);
         System.out.println("element of the MyArrayList after removing: ");
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println(arrayList.get(i) + "");
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.println(myArrayList.get(i) + "");
         }
         System.out.println("___________________________");
     }
@@ -86,7 +88,7 @@ public class MyArrayList implements OwnList {
 
     @Override
     public void add(int index, Integer element) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index >= default_capacity) {
             throw new IndexOutOfBoundsException("Index is out of bounds.");
         }
         ensureCapacity();
